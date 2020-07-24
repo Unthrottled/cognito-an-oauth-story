@@ -26,82 +26,75 @@
 
 				<section>
 					<h2>The Quest for Social Sign-On</h2>
-					<p class="fragment fade-up">Mimic a production like environment locally.</p>
-					<p class="fragment fade-up">Deploy to your own production <span style="font-style: italic">without</span>
-						OpenShift.</p>
-					<p class="fragment fade-up">Basic working knowledge AWS and some DevOps techniques.</p>
-					<p class="fragment fade-up">Minimize the amount of costs you will be responsible to pay.</p>
+					<p class="fragment fade-up">A simplified tale about security.</p>
 				</section>
 
 				<section>
 					<section>
-						<h2>What is Production like?</h2>
-						<p class="fragment fade-up">It's great, you should try it sometime!</p>
-						<p class="fragment fade-up">Good production environments have these traits:</p>
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h2>Secure Network Traffic</h2>
-						<p class="fragment fade-up">The application is accessible from HTTPS.</p>
-						<div class="fragment fade-up">
-							<p>Any HTTP URL is redirected to HTTPS.</p>
-							<small>eg <strong>http://google.com</strong> becomes <strong>https://google.com</strong></small>
-						</div>
-					</section>
-					<section>
-						<div>
-							<p>SSL Certificates are <strong>Valid</strong> and <strong>Trusted</strong>. </p>
-							<img src="images/secure_site.png" alt="secure site"/>
-						</div>
-						<p class="fragment">Now for somethings you do not want </p>
-					</section>
-					<section>
-						<h2>Just HTTP</h2>
-						<div>
-							<img src="images/http.png" alt="insecure site"/>
-							<br/>
-							<h1>._.</h1>
-						</div>
-					</section>
-					<section>
-						<h2>Invalid Certificates 😱</h2>
-						<div>
-							<img src="images/bad-https.png" alt="invalid https site"/><br/>
-							<small>They could be expired or for the incorrect domain</small>
-							<br/>
-							<strong>You really do not want this either!</strong><br/>
-							<p class="fade-up fragment">
-								I'll cover to avoid both of these at <strong>no monetary cost</strong> to you!
-							</p>
-						</div>
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h2>Next Production Trait</h2>
-						<br/>
-						<h3 class="fragment  fade-up">Sub-Domain Support</h3>
-						<div class="fragment fade-up">
-							<p>Things like <strong>google.com</strong> are the main domain</p>
-							<small>While there are also other sites tied under the same domain</small>
-							<small>Such as <strong>docs.google.com</strong> and <strong>drive.google.com</strong>
-							</small>
-						</div>
-					</section>
-					<section>
-						<p style="font-size: 1.25em">https://google.com:3000/index.html</p>
-						<p class="fragment fade-up">Have you ever really done anything this before, like ever?</p>
+						<h2>An idea was born!</h2>
 						<p class="fragment fade-up">
-							Then why is it you always see things like these: <strong>localhost:3000</strong> or <strong>localhost:8080</strong>, when developing locally??
+							Build an application that does a thing!
+						</p>
+						<p class="fragment fade-up">
+							And that can also be shared (securely).
+						</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>How should I approach this?</h2>
+						<p class="fragment fade-up">1. I shouldn't hate myself.</p>
+						<p class="fragment fade-up">2. Support many social logins.</p>
+					</section>
+					<section>
+						<div>
+							<p>Eyes on the prize.</p>
+							<img src="images/social_logins.png" alt="the end goal"/>
+						</div>
+						<p class="fragment">It's just one click, how hard can it be?</p>
+						<p class="fragment">How do I go from no button to button?</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Button-Based Security?</h2>
+						<br/>
+						<div class="fragment fade-up">Buttons just login.</div>
+						<div class="fragment fade-up">They don't protect my APIs.</div>
+						<div class="fragment fade-up">
+							However this revolutionary tech does!
+						</div>
+					</section>
+					<section>
+						<h2>Fancy Header JSON</h2>
+						<p class="fragment fade-up">JSON you can give to your friends!</p>
+						<p class="fragment fade-up">
+							JSON that you can trust!
+						</p>
+						<p class="fragment fade-up">
+							JSON never give you up!
+						</p>
+						<p class="fragment fade-up">
+							JSON never let you down!
 						</p>
 					</section>
 					<section>
-						<h3>How do I not do this?</h3>
+						<h3>Your friends need this!</h3>
+						<pre>
+							<code data-noescape data-trim>
+								{
+								  "preferred_username": "DatBoi",
+								  "given_name": "Alex",
+								  "name": "Alex Simons",
+								  "family_name": "Simons",
+								  "email": "alexsimons9999@gmail.com"
+								}
+						  </code>
+						</pre>
 						<p class="fade-up fragment">
-							Well, if you already have this down then good for you!
+							How else will the know who I am?
 						</p>
 						<p class="fade-up fragment">
 							However, if you do not know, most websites that run on <strong>HTTP</strong> default to port 80 (eg
