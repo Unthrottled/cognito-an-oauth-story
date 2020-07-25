@@ -67,7 +67,7 @@
       </section>
       <section>
         <h2>Fancy Header JSON</h2>
-        <p class="fragment fade-up">JSON you can give to your friends!</p>
+        <p class="fragment fade-up">JSON you can give to your friends/APIs!</p>
         <p class="fragment fade-up">
           JSON that you can trust!
         </p>
@@ -150,43 +150,57 @@
           Some button's Refresh Tokens are not always FHJ.
         </p>
       </section>
+      <section>
+        <h3>Tying it all together</h3>
+        <pre>
+							<code data-noescape data-trim>
+								interface OAuthLoginButtonGift {
+                  access_token: FancyHeaderJSON;
+                  refresh_token: FancyHeaderJSON | SomethingElse;
+               }
+						  </code>
+						</pre>
+        <p>
+          A bunch of nerd stuff happens and you get this.
+        </p>
+      </section>
     </section>
 
     <section>
       <section>
-        <h3>What can I do with FHJ?</h3>
-        <pre>
-							<code data-noescape data-trim>
-								{
-								  //..
-								  "preferred_username": "DatBoi",
-								  "given_name": "Alex",
-								  "name": "Alex Simons",
-								  "family_name": "Simons",
-								  "email": "alexsimons9999@gmail.com",
-								  "access_scopes": [
-								    "withdraw_monies:your-bank-account-lol"
-								  ],
-								  //...
-								}
-						  </code>
-						</pre>
+        <h3>What can be done with this FHJ?</h3>
         <p class="fragment">
-          Just trust your Fancy Header JSON issuer and their fingerprints.
+          It depends on what button I clicked.
+        </p>
+        <p class="fragment">
+          And also what you asked for as well.
         </p>
       </section>
       <section>
-        <h3>Tying it together</h3>
-        <pre>
-							<code data-noescape data-trim>
-								interface SocialLoginButtonGift {
-                  access_token: FancyHeaderJSON;
-                  refresh_token: FancyHeaderJSON | SomethingElseBro;
-               }
-						  </code>
-						</pre>
+        <h3>Ask and you might get it.</h3>
         <p class="fragment">
-          Just trust your Fancy Header JSON issuer and their fingerprints.
+          Define the <strong>scopes</strong> of what your FHJ can do
+        </p>
+        <p class="fragment">
+          You can ask for user's: Email or API access
+        </p>
+      </section>
+      <section>
+        <h3>Give me them resources!</h3>
+        <p class="fragment">
+          Your FHJ now can use API's such as
+        </p>
+        <p class="fragment">
+          <a>https://api.github.com/users/octocat/followers</a>
+        </p>
+      </section>
+      <section>
+        <h3>What about my API?</h3>
+        <p class="fragment">
+          It now becomes a GitHub resource server!
+        </p>
+        <p class="fragment">
+          Which only accepts FHJ from the GitHub Issuer
         </p>
       </section>
     </section>
