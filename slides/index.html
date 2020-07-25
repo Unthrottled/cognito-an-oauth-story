@@ -153,13 +153,13 @@
       <section>
         <h3>Tying it all together</h3>
         <pre>
-							<code data-noescape data-trim>
-								interface OAuthLoginButtonGift {
-                  access_token: FancyHeaderJSON;
-                  refresh_token: FancyHeaderJSON | SomethingElse;
-               }
-						  </code>
-						</pre>
+        <code data-noescape data-trim>
+          interface OAuthLoginButtonGift {
+            access_token: FancyHeaderJSON;
+            refresh_token: FancyHeaderJSON | SomethingElse;
+         }
+        </code>
+        </pre>
         <p>
           A bunch of nerd stuff happens and you get this.
         </p>
@@ -201,6 +201,76 @@
         </p>
         <p class="fragment">
           Which only accepts FHJ from the GitHub Issuer
+        </p>
+      </section>
+    </section>
+
+    <section>
+      <section>
+        <h3>That's not what I want!</h3>
+        <p class="fragment">
+          That's good for building apps just for GitHub.
+        </p>
+        <p class="fragment">
+          I need all the buttons and trust only one FHJ issuer!
+        </p>
+      </section>
+      <section>
+        <h3>What do I need?</h3>
+        <p class="fragment">
+          Something that issues FHJ.
+        </p>
+        <p class="fragment">
+          Something that figures out who users are based on buttons.
+        </p>
+      </section>
+    </section>
+
+    <section>
+      <section>
+        <h3>Button Based Authentication!</h3>
+        <p class="fragment">
+          I need to know who my user is (eg: their email).
+        </p>
+      </section>
+      <section>
+        <h3>Can OAuth do this?</h3>
+        <p class="fragment">
+          Nope.
+        </p>
+      </section>
+      <section>
+        <h3>Not all buttons are created equal.</h3>
+        <img alt="the end goal" src="images/social_logins.png"/>
+        <p class="fragment">
+          I need something different
+        </p>
+      </section>
+    </section>
+
+    <section>
+      <section>
+        <h3>I need OpenID Connect.</h3>
+        <p class="fragment">
+          What's the difference?
+        </p>
+      </section>
+      <section>
+        <h3>This is the difference</h3>
+        <pre>
+        <code data-noescape data-trim>
+          interface OAuthLoginButtonGift {
+            access_token: FancyHeaderJSON;
+            refresh_token: FancyHeaderJSON | SomethingElse;
+          }
+
+          interface OpenIDConnectButtonGift extends OAuthLoginButtonGift {
+            id_token: FancyHeaderJSON;
+          }
+        </code>
+        </pre>
+        <p class="fragment">
+          Now what?
         </p>
       </section>
     </section>
