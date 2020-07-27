@@ -230,11 +230,11 @@
       <section>
         <h3>Button Based Authentication!</h3>
         <p class="fragment">
-          I need to know who my user is (eg: their email).
+          I need to always know who my user is.
         </p>
       </section>
       <section>
-        <h3>Can OAuth do this?</h3>
+        <h3>Can OAuth do always do this?</h3>
         <p class="fragment">
           Nope.
         </p>
@@ -270,8 +270,91 @@
         </code>
         </pre>
         <p class="fragment">
-          Now what?
+          So what can I do?
         </p>
+      </section>
+      <section>
+        <h3>Know your user!</h3>
+        <p class="fragment">
+          Just by also asking for the <code>openid</code> scope
+        </p>
+        <p class="fragment">
+          As an example: <code>email, profile, openid</code>
+        </p>
+        <p class="fragment">
+          You could say that it is a user's <code>Identity Provider</code>
+        </p>
+      </section>
+    </section>
+
+    <section>
+      <section>
+        <h4>OpenId Connect is not enough</h4>
+        <p class="fragment">
+          Still tied to one FHJ/User issuer.
+        </p>
+      </section>
+      <section>
+        <h3>Enter Cognito</h3>
+        <p class="fragment">
+          Trusted FHJ/User Issuer
+        </p>
+        <p class="fragment">
+          Can consume other trusted FHJ/User Issuers (Identity Providers, eg IDPs)
+        </p>
+        <p class="fragment">
+          Can also authenticate users itself.
+        </p>
+      </section>
+      <section>
+        <img alt="what you get" src="images/login_with_idps.png"/>
+      </section>
+      <section>
+        <h3>What you get</h3>
+        <p class="fragment">
+          One trusted FHJ/User Issuer
+        </p>
+        <p class="fragment">
+          Your API does not care where users come from.
+        </p>
+        <p class="fragment">
+          Does exactly what Okta and Keycloak provide.
+        </p>
+      </section>
+    </section>
+
+    <section>
+      <section>
+        <h3>What's the catch?</h3>
+        <p class="fragment">
+          There are some small pitfalls
+        </p>
+      </section>
+      <section>
+        <h3>Limited login screen customization</h3>
+        <p class="fragment">
+          There is a work around
+        </p>
+      </section>
+      <section>
+        <pre>
+          <code>
+  new AuthorizationRequest(
+      {
+        client_id: initialConfigurations.clientID,
+        redirect_uri: initialConfigurations.callbackURI,
+        scope: 'openid profile email',
+        response_type: AuthorizationRequest.RESPONSE_TYPE_CODE,
+        extras: {
+          identity_provider: 'LoginWithAmazon', // important bit
+        }
+      }
+    );
+          </code>
+        </pre>
+      </section>
+      <section>
+        // todo not able to customize access token
       </section>
     </section>
 
