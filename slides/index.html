@@ -337,6 +337,7 @@
         </p>
       </section>
       <section>
+        <h3>Give Cognito a Hint</h3>
         <pre>
           <code>
   new AuthorizationRequest(
@@ -352,35 +353,77 @@
     );
           </code>
         </pre>
+        <p class="fragment">Your users will never have to know Cognito exists</p>
       </section>
       <section>
-        // todo not able to customize access token
+        <h3>No access token claim customization</h3>
+        <div class="fragment">
+            <pre>
+              <code>{
+  "sub": "cae2a88f-98e7-4250-ae10-4e032b5c5371",
+  "cognito:groups": [
+    "us-east-1_DIccfJcVB_Google"
+  ],
+  "token_use": "access",
+  "scope": "openid profile email",
+  "auth_time": 1594938816,
+  "iss": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_AkCtj23zR",
+  "exp": 1595930973,
+  "iat": 1595927373,
+  "version": 2,
+  "client_id": "kjRbwelUwotM8arl823bw",
+  "username": "google_111960955573774759753"
+}</code>
+            </pre>
+        </div>
+        <p class="fragment">
+          However there is ID token customization
+        </p>
       </section>
-    </section>
-
-    <section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-      <h2 style="color: white; text-shadow: 3px 0 0 #000, 0 -3px 0 #000, 0 3px 0 #000, -3px 0 0 #000;">
-        It's dat boi!
-      </h2>
+      <section>
+        <h3>What do I do?</h3>
+        <div class="fragment">
+          <img alt="big brain fix" src="images/big_brain_fix.jpg"/>
+        </div>
+      </section>
+      <section>
+        <h3>You get AWS documentation</h3>
+        <p class="fragment">
+          It's getting better, but still...
+        </p>
+        <p class="fragment">
+          Cognito was built for access to AWS resources.
+        </p>
+        <p class="fragment">
+          Maybe you need to know what you are doing?
+        </p>
+      </section>
     </section>
 
     <section>
-      <h2>Recap</h2>
-      <p class="fragment fade-up">How to mimic a production like environment locally.</p>
-      <p class="fragment fade-up">Deploy to your own production <span style="font-style: italic">without</span>
-        OpenShift.</p>
-      <p class="fragment fade-up">Get basic working knowledge AWS and some DevOps techniques.</p>
-      <p class="fragment fade-up">How to minimize the amount of costs you will be responsible to pay.</p>
+      <section>
+        <h3>What's was this about again?</h3>
+        <p class="fragment">
+          One FHJ Issuer that I trust
+        </p>
+        <p class="fragment">
+          I know which buttons I can use to support the above.
+        </p>
+      </section>
+      <section>
+        <img alt="Identity providers" src="images/idps.png"/>
+      </section>
     </section>
 
-    <section style="text-align: left;">
-      <h1>THE END</h1>
-      <p>
-        - <a href="https://github.com/Unthrottled/acari-api" target="_blank">To see my production setup.</a> <br>
-        - <a href="https://github.com/Unthrottled/frugal-aws" target="_blank">Source code from this
-        presentation</a><br/>
-        - <a href="https://frugal-aws.unthrottled.io" target="_blank">Slides in website format.</a>
-      </p>
+    <section>
+      <h4>Things I would have liked to talk about</h4>
+      <div style="text-align: left">
+        <ul>
+          <li>Why Cognito?</li>
+          <li>What are libraries good?</li>
+          <li>What are the ways to get FHJ?</li>
+        </ul>
+      </div>
     </section>
   </div>
 </div>
