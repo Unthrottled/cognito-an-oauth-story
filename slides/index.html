@@ -26,7 +26,7 @@
 
     <section>
       <h2>The Quest for Social Sign-On</h2>
-      <p class="fragment fade-up">A simplified tale about security.</p>
+      <p>A simplified tale about security.</p>
     </section>
 
     <section>
@@ -63,7 +63,7 @@
         <h2>Button-Based Security!</h2>
         <br/>
         <div class="fragment fade-up">Buttons not only just login.</div>
-        <div class="fragment fade-up">They also bring API gifts!</div>
+        <div class="fragment fade-up">They also bring API security gifts!</div>
       </section>
       <section>
         <h2>Fancy Header JSON</h2>
@@ -72,7 +72,7 @@
           JSON that you can trust!
         </p>
         <p class="fragment fade-up">
-          JSON never give you up! (for a little bit)
+          JSON never give you up!
         </p>
         <p class="fragment fade-up">
           JSON never let you down!
@@ -91,7 +91,10 @@
 								}
 						  </code>
 						</pre>
-        <p class="fade-up fragment">
+        <p>
+          It's just JSON!
+        </p>
+        <p>
           How else will they know who I am?
         </p>
       </section>
@@ -110,7 +113,7 @@
 						  </code>
 						</pre>
         <p class="fade-up fragment">
-          More JSON, Less problems!
+          Well, it's not just JSON..
         </p>
         <p class="fade-up fragment">
           Built-in tamper proof technology!
@@ -126,7 +129,7 @@
 								  "given_name": "Alex",
 								  "name": "Alex Simons",
 								  "family_name": "Simons",
-								  "email": "alexsimons9999@gmail.com",
+								  "email": "alex@unthrottled.io",
 								  "access_scopes": [
 								    "withdraw_monies:your-bank-account-lol"
 								  ],
@@ -134,14 +137,14 @@
 								}
 						  </code>
 						</pre>
-        <p class="fragment">
-          Just trust your Fancy Header JSON issuer and their fingerprints.
+        <p>
+          Just trust your Fancy Header JSON issuer and their signature.
         </p>
       </section>
       <section>
         <h3>FHJ has a Friend!</h3>
         <p class="fragment">
-          Some Social login buttons (the OAuth kind) includes a bonus gift.
+          Social login buttons (the OAuth kind) includes a bonus gift.
         </p>
         <p class="fragment">
           The power to get more FHJ!
@@ -169,58 +172,60 @@
     <section>
       <section>
         <h3>What can be done with this FHJ?</h3>
-        <p class="fragment">
+        <p>
           It depends on what button I clicked.
         </p>
-        <p class="fragment">
-          And also what you asked for as well.
+        <p>
+          And also what I asked for as well.
         </p>
       </section>
       <section>
         <h3>Ask and you might get it.</h3>
-        <p class="fragment">
+        <p>
           Define the <strong>scopes</strong> of what your FHJ can do
         </p>
-        <p class="fragment">
+        <p>
           You can ask for user's: Email or API access
         </p>
       </section>
       <section>
         <h3>Give me them resources!</h3>
-        <p class="fragment">
+        <p>
           Your FHJ now can use API's such as
         </p>
-        <p class="fragment">
+        <p>
           <a>https://api.github.com/users/octocat/followers</a>
         </p>
       </section>
       <section>
         <h3>What about my API?</h3>
-        <p class="fragment">
-          It now becomes a GitHub resource server!
-        </p>
-        <p class="fragment">
-          Which only accepts FHJ from the GitHub Issuer
-        </p>
+        <div>
+          <p>
+            It now becomes a GitHub resource server!
+          </p>
+          <p>
+            Which only accepts FHJ from the GitHub Issuer
+          </p>
+        </div>
       </section>
     </section>
 
     <section>
       <section>
         <h3>That's not what I want!</h3>
-        <p class="fragment">
+        <p>
           That's good for building apps just for GitHub.
         </p>
-        <p class="fragment">
+        <p>
           I need all the buttons and trust only one FHJ issuer!
         </p>
       </section>
       <section>
-        <h3>What do I need?</h3>
-        <p class="fragment">
+        <h3>What do I actually need?</h3>
+        <p>
           Something that issues FHJ.
         </p>
-        <p class="fragment">
+        <p>
           Something that figures out who users are based on buttons.
         </p>
       </section>
@@ -229,20 +234,23 @@
     <section>
       <section>
         <h3>Button Based Authentication!</h3>
-        <p class="fragment">
+        <p>
           I need to always know who my user is.
         </p>
       </section>
       <section>
-        <h3>Can OAuth do always do this?</h3>
+        <h3>Can OAuth do this?</h3>
         <p class="fragment">
           Nope.
+        </p>
+        <p class="fragment">
+          You can just do stuff on their behalf.
         </p>
       </section>
       <section>
         <h3>Not all buttons are created equal.</h3>
         <img alt="the end goal" src="images/social_logins.png"/>
-        <p class="fragment">
+        <p>
           I need something different
         </p>
       </section>
@@ -275,12 +283,14 @@
       </section>
       <section>
         <h3>Know your user!</h3>
-        <p class="fragment">
-          Just by also asking for the <code>openid</code> scope
-        </p>
-        <p class="fragment">
-          As an example: <code>email, profile, openid</code>
-        </p>
+        <div class="fragment">
+          <p>
+            Just by asking for the <code>openid</code> scope, as well
+          </p>
+          <p>
+            As an example: <code>email, profile, openid</code>
+          </p>
+        </div>
         <p class="fragment">
           You could say that it is a user's <code>Identity Provider</code>
         </p>
@@ -300,7 +310,7 @@
           Trusted FHJ/User Issuer
         </p>
         <p class="fragment">
-          Can consume other trusted FHJ/User Issuers (Identity Providers, eg IDPs)
+          Can consume other trusted FHJ/User Issuers (Identity Providers aka IDPs)
         </p>
         <p class="fragment">
           Can also authenticate users itself.
