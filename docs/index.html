@@ -24,20 +24,37 @@
     </section>
 
     <section>
-      <h2>My Quest for Social Sign-On</h2>
-      <p>A simplified tale about security.</p>
-      <h4>Featuring Amazon's Cognito</h4>
+      <section>
+        <h2>My Quest for Social Sign-On</h2>
+        <p>A simplified tale about security.</p>
+        <h4>Featuring Amazon's Cognito</h4>
+      </section>
+      <section>
+        <h3>Where we are going</h3>
+        <ul>
+          <li>The End... First!</li>
+          <li>OAuth Essentials</li>
+          <li>OpenID Connect?</li>
+          <li>What/Why Cognito?</li>
+        </ul>
+      </section>
     </section>
 
     <section>
       <section>
         <h2>An idea was born!</h2>
-        <p class="fragment fade-up">
-          Build an application that does a thing!
-        </p>
-        <p class="fragment fade-up">
-          And that can also be shared (securely).
-        </p>
+        <div class="fragment fade-up">
+          <p>
+            Build an application that does a thing!
+          </p>
+          <p>
+            And that can also be shared (securely).
+          </p>
+          <p>
+            <!--            be sure to preserve network logs-->
+            <a href="http://sogos.unthrottled.io" target="_blank">Said Application</a>
+          </p>
+        </div>
       </section>
     </section>
 
@@ -51,10 +68,10 @@
         <div>
           <p>Eyes on the prize.</p>
           <img alt="the end goal" src="images/social_logins.png"/>
+          <p>It's just one click, how hard can it be?</p>
+          <p>Not all buttons are created equal.</p>
         </div>
-        <p class="fragment">It's just one click, how hard can it be?</p>
-        <p class="fragment">Not all buttons are created equal.</p>
-        <p class="fragment">How do I go from no button to button?</p>
+        <!--        <p class="fragment">How do I go from no button to button?</p>-->
       </section>
     </section>
 
@@ -62,8 +79,8 @@
       <section>
         <h2>Button-Based Security!</h2>
         <br/>
-        <div class="fragment fade-up">Buttons not only just login.</div>
-        <div class="fragment fade-up">They also bring API security gifts!</div>
+        <div>Buttons not only just login.</div>
+        <div>They also bring API security gifts!</div>
       </section>
       <section>
         <h2>Fancy Header JSON</h2>
@@ -80,6 +97,9 @@
       </section>
       <section>
         <h3>My API's need this!</h3>
+        <p>
+          It's just JSON!
+        </p>
         <pre>
 							<code data-noescape data-trim>
 								{
@@ -87,18 +107,22 @@
 								  "given_name": "Alex",
 								  "name": "Alex Simons",
 								  "family_name": "Simons",
-								  "email": "alexsimons9999@gmail.com"
+								  "email": "alexsimons9999@gmail.com",
+                  "roles": [
+								    "presenter_dude"
+								  ],
 								}
 						  </code>
 						</pre>
-        <p>
-          It's just JSON!
-        </p>
       </section>
       <section>
-<!--        need to expand more on what fancy header json does-->
-<!--        - the signing pieces and such-->
         <h3>I can trust this!</h3>
+        <p>
+          Built-in tamper proof technology!
+        </p>
+<!--        <p>-->
+<!--          Just trust my Fancy Header JSON issuer and their signature.-->
+<!--        </p>-->
         <pre>
 							<code data-noescape data-trim>
 								{
@@ -113,32 +137,7 @@
 						  </code>
 						</pre>
         <p>
-          Well, it's not just JSON..
-        </p>
-        <p>
-          Built-in tamper proof technology!
-        </p>
-      </section>
-      <section>
-        <h3>I dont want this!</h3>
-        <pre>
-							<code data-noescape data-trim>
-								{
-								  //..
-								  "preferred_username": "DatBoi",
-								  "given_name": "Alex",
-								  "name": "Alex Simons",
-								  "family_name": "Simons",
-								  "email": "alex@unthrottled.io",
-								  "access_scopes": [
-								    "withdraw_monies:your-bank-account-lol"
-								  ],
-								  //...
-								}
-						  </code>
-						</pre>
-        <p>
-          Just trust my Fancy Header JSON issuer and their signature.
+          So it's not just JSON..
         </p>
       </section>
       <section>
@@ -157,6 +156,9 @@
       </section>
       <section>
         <h3>Tying it all together</h3>
+        <p>
+          A bunch of nerd stuff happens and I get this.
+        </p>
         <pre>
         <code data-noescape data-trim>
           interface OAuthLoginButtonGift {
@@ -165,15 +167,12 @@
          }
         </code>
         </pre>
-        <p>
-          A bunch of nerd stuff happens and I get this.
-        </p>
       </section>
     </section>
 
     <section>
       <section>
-        <h3>What can be done with this FHJ?</h3>
+        <h3>What can be done with this JWT?</h3>
         <p>
           It depends on what button I clicked.
         </p>
@@ -184,7 +183,7 @@
       <section>
         <h3>Ask and I might get it.</h3>
         <p>
-          Define the <strong>scopes</strong> of what my FHJ can do
+          Define the <strong>scopes</strong> of what my JWT can do
         </p>
         <p>
           I can ask for user's: Email or API access
@@ -193,10 +192,13 @@
       <section>
         <h3>Give me them resources!</h3>
         <p>
-          My FHJ now can use API's such as
+          My JWT now can use API's such as
         </p>
         <p>
           <a>https://api.github.com/users/octocat/followers</a>
+        </p>
+        <p class="fragment">
+          Let me show you a quick GitLab Demo!
         </p>
       </section>
       <section>
@@ -206,7 +208,7 @@
             It now becomes a GitHub resource server!
           </p>
           <p>
-            Which only accepts FHJ from the GitHub Issuer
+            Which only accepts JWT from the GitHub Issuer
           </p>
         </div>
       </section>
@@ -219,13 +221,13 @@
           That's good for building apps just for GitHub.
         </p>
         <p>
-          I need all the buttons and trust only one FHJ issuer!
+          I need all the buttons and trust only one JWT issuer!
         </p>
       </section>
       <section>
-        <h3>What do I actually need?</h3>
+        <h3>What can solve my problem?</h3>
         <p>
-          Something that issues FHJ.
+          Something that issues JWT.
         </p>
         <p>
           Something that figures out who users are based on buttons.
@@ -236,9 +238,14 @@
     <section>
       <section>
         <h3>Button Based Authentication!</h3>
-        <p>
-          I need to always know who my user is.
-        </p>
+        <div class="fragment">
+          <p>
+            Authentication: who are you, bruv?
+          </p>
+          <p>
+            Authorization: what are you allowed to do?
+          </p>
+        </div>
       </section>
       <section>
         <h3>Can OAuth do this?</h3>
@@ -253,7 +260,7 @@
         <h3>Not all buttons are created equal.</h3>
         <img alt="the end goal" src="images/social_logins.png"/>
         <p>
-          I need something different
+          I need a different kind of button.
         </p>
       </section>
     </section>
@@ -279,15 +286,15 @@
           }
         </code>
         </pre>
-        <p class="fragment">
-          What can I do?
-        </p>
+<!--        <p class="fragment">-->
+<!--          What can I do?-->
+<!--        </p>-->
       </section>
       <section>
         <h3>Know my user!</h3>
         <div class="fragment">
           <p>
-<!--            Button request-->
+            <!--            Button request-->
             Just by adding the <code>openid</code> scope
           </p>
           <p>
@@ -305,39 +312,45 @@
         <h4>OpenId Connect is not enough</h4>
         <div class="fragment">
           <p>
-            Still tied to one FHJ/User issuer.
+            Still tied to one JWT/User issuer.
           </p>
-          <p>
-            What do?
-          </p>
+<!--          <p>-->
+<!--            What do?-->
+<!--          </p>-->
         </div>
       </section>
       <section>
         <h3>Enter Cognito</h3>
         <p class="fragment">
-          Trusted FHJ/User Issuer
+          Trusted JWT/User Issuer
         </p>
         <p class="fragment">
-          Can consume other trusted FHJ/User Issuers
+          Can consume other trusted JWT/User Issuers
         </p>
         <p class="fragment">
           Can also authenticate users itself.
         </p>
+<!--        What is cognito besides that (aws service)-->
       </section>
       <section>
         <img alt="what you get" src="images/login_with_idps.png"/>
       </section>
       <section>
-        <h3>Overview of what I get</h3>
+        <h3>Checks all the boxes!</h3>
         <p class="fragment">
-          One trusted FHJ/User Issuer
+          One trusted JWT/User Issuer
         </p>
         <p class="fragment">
           My API does not care where users come from.
         </p>
-        <p class="fragment">
-          Does exactly what Okta and Keycloak provide.
-        </p>
+        <div class="fragment">
+          <p>
+            Does exactly what other <code>Identity Broker</code> & <code>Authorization Servers</code> do.
+          </p>
+          <p>
+            Such as: Okta, Auth0, and Keycloak
+          </p>
+        </div>
       </section>
     </section>
 
@@ -394,12 +407,12 @@
 }</code>
             </pre>
         </div>
-        <p>
-          However there is ID token customization
-        </p>
       </section>
       <section>
         <h3>What do I do?</h3>
+        <p class="fragment">
+          There is ID token customization...
+        </p>
         <div class="fragment">
           <img alt="big brain fix" src="images/big_brain_fix.jpg"/>
         </div>
@@ -420,12 +433,19 @@
     <section>
       <section>
         <h3>What's was this about again?</h3>
-        <p class="fragment">
-          One FHJ Issuer that I trust
-        </p>
-        <p class="fragment">
-          I know which buttons I can use to support the above.
-        </p>
+        <ul>
+          <li>OAuth Essentials</li>
+          <li>OpenID Connect?</li>
+          <li>What/Why Cognito?</li>
+        </ul>
+        <div class="fragment">
+          <p>
+            One JWT Issuer that I trust
+          </p>
+          <p>
+            I know which buttons I can use to support the above.
+          </p>
+        </div>
       </section>
       <section>
         <img alt="Identity providers" src="images/idps.png"/>
@@ -438,7 +458,7 @@
         <ul>
           <li>Why Cognito?</li>
           <li>What are libraries good?</li>
-          <li>What are the ways to get FHJ?</li>
+          <li>What are the ways to get JWT?</li>
         </ul>
       </div>
     </section>
@@ -450,15 +470,15 @@
 <script src="plugin/markdown/markdown.js"></script>
 <script src="plugin/highlight/highlight.js"></script>
 <script>
-  // More info about initialization & config:
-  // - https://revealjs.com/initialization/
-  // - https://revealjs.com/config/
-  Reveal.initialize({
-    hash: true,
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+        hash: true,
 
-    // Learn about plugins: https://revealjs.com/plugins/
-    plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
-  });
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+    });
 </script>
 </body>
 </html>
