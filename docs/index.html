@@ -104,7 +104,7 @@
 								  "name": "Alex Simons",
 								  "family_name": "Simons",
 								  "email": "alexsimons9999@gmail.com",
-                   "roles": [
+								  "roles": [
 								    "presenter_dude"
 								  ],
 								}
@@ -122,33 +122,36 @@
         <pre>
 							<code data-noescape data-trim>
 								{
+								  "iss": "https://google.com/fancy-json-maker",
+								  "exp": 1594649668,
+           // Other stuff...
+								}
+								{
 								  "kid": "694Pa2KEd7kyAVc420OTlsrLO90017s/w5RRJ2UcLTU=",
 								  "alg": "RS256"
 								}
-								{
-								  "iss": "https://google.com/fancy-json-maker",
-								  "exp": 1594649669,
-           // ...
-								}
 						  </code>
 						</pre>
-        <p>
-          So it's not just JSON..
-        </p>
+        <a href="https://cognito-idp.us-east-1.amazonaws.com/us-east-1_DIccfJcVB/.well-known/jwks.json" target="_blank">
+          Issuer Sample
+        </a>
+<!--        <p>-->
+<!--          So it's not just JSON..-->
+<!--        </p>-->
       </section>
       <section>
-        <h3>Access Token has a Friend!</h3>
+        <h3>But Wait, There's more!</h3>
         <div class="fragment">
           <p>
-            Social login buttons (the OAuth kind) includes a bonus gift.
+            OAuth social login buttons includes a bonus gift.
           </p>
           <p>
-            The power to get more (refresh) FHJ!
+            The power to get more FHJ (eg refresh)!
+          </p>
+          <p>
+            Some button's Refresh Tokens are not always FHJ.
           </p>
         </div>
-        <p class="fragment">
-          Some button's Refresh Tokens are not always FHJ.
-        </p>
       </section>
       <section>
         <h3>Tying it all together</h3>
@@ -201,10 +204,10 @@
         <h3>What about my API?</h3>
         <div>
           <p>
-            It now becomes a GitHub resource server!
+            It could become a GitHub resource server!
           </p>
           <p>
-            Which only accepts JWT from the GitHub Issuer
+            Which means only accepts JWT from the GitHub Issuer.
           </p>
         </div>
       </section>
@@ -224,17 +227,17 @@
       <section>
         <h3>What can solve my problem?</h3>
         <p>
-          Something that issues JWT.
+          Something that figures out who users are via social sites.
         </p>
         <p>
-          Something that figures out who users are based on buttons.
+          Something that issues/re-issues JWTs.
         </p>
       </section>
     </section>
 
     <section>
       <section>
-        <h3>Button Based Authentication!</h3>
+        <h3>Social media Authentication!</h3>
         <div class="fragment">
           <p>
             Authentication: who are you, bruv?
@@ -256,11 +259,11 @@
         </div>
       </section>
       <section>
-        <h3>Not all buttons are created equal.</h3>
+        <h3>Not all buttons do the same thing.</h3>
         <img alt="the end goal" src="images/social_logins.png"/>
-        <p>
-          I need a different kind of button.
-        </p>
+<!--        <p>-->
+<!--          I need a different kind of button.-->
+<!--        </p>-->
       </section>
     </section>
 
@@ -290,8 +293,8 @@
 <!--        </p>-->
       </section>
       <section>
-        <h3>Know my user!</h3>
-        <div class="fragment">
+        <h3>I now know you!</h3>
+        <div>
           <p>
             <!--            Button request-->
             Just by adding the <code>openid</code> scope
@@ -301,7 +304,7 @@
           </p>
         </div>
         <p class="fragment">
-          You could say that it is a user's <code>Identity Provider</code>
+          These social sites are a user's <code>Identity Provider</code>
         </p>
       </section>
     </section>
@@ -337,19 +340,20 @@
       <section>
         <h3>Checks all the boxes!</h3>
         <p class="fragment">
-          One trusted JWT/User Issuer
+          I don't need to update my code all the time.
         </p>
         <p class="fragment">
           My API does not care where users come from.
         </p>
-        <div class="fragment">
-          <p>
-            Does exactly what other <code>Identity Broker</code> & <code>Authorization Servers</code> do.
-          </p>
-          <p>
-            Such as: Okta, Auth0, and Keycloak
-          </p>
-        </div>
+      </section>
+      <section>
+        <h3>This seems familiar</h3>
+        <p>
+          Does exactly what other <code>Identity Broker</code> & <code>Authorization Servers</code> do.
+        </p>
+        <p>
+          Such as: Okta, Auth0, and Keycloak
+        </p>
       </section>
     </section>
 
@@ -387,7 +391,7 @@
       </section>
       <section>
         <h3>No access token claim customization</h3>
-        <div class="fragment">
+        <div>
             <pre>
               <code>{
   "sub": "cae2a88f-98e7-4250-ae10-4e032b5c5371",
@@ -439,7 +443,7 @@
         </ul>
         <div class="fragment">
           <p>
-            One JWT Issuer that I trust
+            One JWT Issuer that my code trusts
           </p>
           <p>
             I know which buttons I can use to support the above.
